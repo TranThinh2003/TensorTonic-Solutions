@@ -1,6 +1,6 @@
 """
  *     author:  Shinomiyaaa
- *     created: 13.03.2026 09:29:05
+ *     created: 20.03.2026 10:40:48
 """
 import numpy as np
 
@@ -11,11 +11,11 @@ def softmax(x):
     For 2D, compute row-wise softmax.
     """
     # Write code here
-    x = np.array(x)
-    if x.ndim==1:
+    x = np.asarray(x)
+    if x.ndim == 1:
         x = x - np.max(x)
         return np.exp(x) / np.sum(np.exp(x))
     elif x.ndim == 2:
-        x = x - np.max(x,axis=1,keepdims=1)
-        return np.exp(x) / np.sum(np.exp(x),axis=1,keepdims=1)
+        x = x - np.max(x,axis=1,keepdims=True)
+        return np.exp(x) / np.sum(np.exp(x),axis=1,keepdims=True)
     pass
